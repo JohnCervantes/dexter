@@ -130,7 +130,7 @@
 }
 
 .footer {
-  @apply text-white bg-red-800  flex font-OpenSans justify-between p-5;
+  @apply text-white bg-red-800 flex font-OpenSans justify-between p-5;
 }
 
 .trial-button {

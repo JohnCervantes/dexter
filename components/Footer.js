@@ -24,13 +24,13 @@ export default function Footer() {
           To the top
         </span>
       </div> */}
-      <div>
+      <div className="flex w-[50%] justify-end">
         <FontAwesomeIcon
           icon={faEnvelope}
           onClick={() =>
             window.open("mailto:JohnCervantes@protonmail.com", "_blank")
           }
-          className="mr-2 cursor-pointer hover:text-white"
+          className="w-[50px] h-[40px] mr-2 cursor-pointer hover:text-white"
           size="2x"
         />
         <FontAwesomeIcon
@@ -38,7 +38,7 @@ export default function Footer() {
           onClick={() =>
             window.open("https://github.com/JohnCervantes", "_blank")
           }
-          className="mr-2 cursor-pointer hover:text-white"
+          className="w-[50px] h-[40px] mr-2 cursor-pointer hover:text-white"
           size="2x"
         />
         <FontAwesomeIcon
@@ -46,7 +46,7 @@ export default function Footer() {
           onClick={() =>
             window.open("https://www.linkedin.com/in/j-cervantes/", "_blank")
           }
-          className="mr-2 cursor-pointer hover:text-white"
+          className="w-[50px] h-[40px]  mr-2 cursor-pointer hover:text-white"
           size="2x"
         />
         <FontAwesomeIcon
@@ -57,13 +57,13 @@ export default function Footer() {
               "_blank"
             )
           }
-          className="mr-2 cursor-pointer hover:text-white"
+          className="w-[50px] h-[40px]  mr-2 cursor-pointer hover:text-white"
           size="2x"
         />
         <FontAwesomeIcon
           icon={faTwitterSquare}
           onClick={() => window.open("https://twitter.com/vocalistx", "_blank")}
-          className="mr-2 cursor-pointer hover:text-white"
+          className="w-[50px] h-[40px] mr-2 cursor-pointer hover:text-white"
           size="2x"
         />
       </div>
