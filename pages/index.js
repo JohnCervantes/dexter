@@ -1,82 +1,68 @@
-import Head from 'next/head'
+import React from "react";
+import Image from "next/image";
+import Head from "next/head";
 
-export default function Home() {
+export default function index() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Dexter</title>
+        <meta
+          name="description"
+          content="Fan-made website of a popular TV series called Dexter. "
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <div className="relative overflow-hidden">
+        <div className="w-screen h-screen relative">
+          <Image
+            src="https://www.sho.com/site/image-bin/images/1034991_1_0/1034991_1_0_prm-keyart_1700x1063.jpg"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="50% 0"
+          />
         </div>
-      </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
+        <div className="text-center w-full absolute top-0 text-white font-OpenSans p-5">
+          <p className="text-xl ">
+            DEXTER IS BACK! KILLER NEW EPISODES EVERY SUNDAY{" "}
+          </p>
+          <div className="mx-auto border-2 border-red-700 w-[15%] my-3" />
+        </div>
+        <div className=" absolute bottom-10 left-5 text-white font-OpenSans p-5">
+          <p className="text-4xl">DEXTER: NEW BLOOD </p>
+          <p>
+            Set 10 years after Dexter went missing in the eye of Hurricane
+            Laura, the series finds him living under an assumed name in the
+            small town of Iron Lake, New York. Dexter may be embracing his new
+            life, but in the wake of unexpected events in this close-knit
+            community, his Dark Passenger beckons.
+          </p>
+          <button
+            className="underline"
+            onClick={() => {
+              window.open(
+                "https://www.youtube.com/watch?v=l9H1uSS_zkk",
+                "_blank"
+              );
+            }}
+          >
+            WATCH THE TRAILER {">"}
+          </button>
+          <div className="flex align-middle justify-center mt-3">
+            <button
+              onClick={() => {
+                window.open(
+                  "https://www.sho.com/order?i_cid=int-default-8492",
+                  "_blank"
+                );
+              }}
+              className="trial-button"
+            >
+              START YOUR 30 DAY FREE TRIAL
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
