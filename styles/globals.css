@@ -6,6 +6,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply font-OpenSans;
+}
+
 .navigation {
   @apply w-full
     text-2xl
@@ -130,7 +134,7 @@
 }
 
 .footer {
-  @apply text-white bg-red-800 flex font-OpenSans justify-between p-5;
+  @apply text-white bg-red-800 flex justify-between p-5;
 }
 
 .trial-button {
@@ -155,14 +159,13 @@
 
 .modal-form {
   @apply sm:h-[95%]
+  bg-gray-900
     w-full
     h-full
-    sm:w-[80%]
-    bg-white
+    sm:w-[40%]
     rounded-lg 
     fixed
     p-1
-    pl-5
     overflow-auto
     sm:overflow-hidden
     flex
@@ -171,7 +174,8 @@
     inset-0
     m-auto
     border
-    border-gray-100
+    text-white
+    border-gray-700
     animate-fade-in
     z-50
     shadow-lg;
@@ -203,7 +207,7 @@ label {
 .form-header,
 .homepage-title {
   @apply font-bold
- text-3xl mb-5 text-center;
+ text-3xl text-center;
 }
 
 /* Carousel CSS */

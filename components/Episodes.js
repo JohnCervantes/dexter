@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Episodes({ propRef }) {
   return (
-    <div className="bg-gray-900 p-5 w-[80%] mb-5 font-OpenSans">
-      <div ref={propRef} class="grid grid-cols-1 divide-y-2 divide-red-700">
+    <div className="bg-gray-900 p-5 w-[80%] mb-5">
+      <div ref={propRef} className="grid grid-cols-1 divide-y-2 divide-red-700">
         <p className="text-3xl font-bold">Season 1: 10 Episodes</p>
         <div className="mb-5">
           <p className="m-5 text-2xl text-center font-semibold">
@@ -13,16 +13,23 @@ export default function Episodes({ propRef }) {
             className="mx-auto"
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/xvUJVFbpBjI"
+            src="https://www.youtube-nocookie.com/embed/xvUJVFbpBjI"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
           <p className="text-center underline">Watch the trailer</p>
-          <p>Directed by: Marcos Siega</p>
-          <p>Written by: Clyde Phillips and Adam Rapp</p>
+          <p>
+            <b>Directed by:</b> Marcos Siega
+          </p>
+          <p>
+            <b>Written by:</b> Clyde Phillips and Adam Rapp
+          </p>
           <br />
+          <p>
+            <b>Episode Synopsis:</b>
+          </p>
           <p>
             Ten years after leaving Miami, Dexter is living in upstate New York
             under the assumed name Jim Lindsay. He works at a local outdoor shop
@@ -81,15 +88,14 @@ export default function Episodes({ propRef }) {
             height="315"
             src="https://www.youtube.com/embed/p-IpKRenVCE"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
           <p className="text-center underline">Watch the trailer</p>
           <p>Directed by: Sanford Bookstaver</p>
           <p>Written by: David McMillan</p>
           <br />
-     
         </div>
       </div>
     </div>
