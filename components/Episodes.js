@@ -185,7 +185,7 @@ export default function Episodes({ propRef }) {
         </div>
         <div className="mb-5">
           <p className="m-5 font-semibold text-2xl text-center">
-            Episode 6: Too Many Tuna Sandwiches
+            Episode 6: End of the Road
           </p>
           {/* <iframe
             className="mx-auto"
@@ -269,7 +269,7 @@ export default function Episodes({ propRef }) {
         </div>
         <div className="mb-5">
           <p className="m-5 font-semibold text-2xl text-center">
-            Episode 8: TBA
+            Episode 9: TBA
           </p>
           {/* <iframe
             className="mx-auto"
@@ -296,7 +296,7 @@ export default function Episodes({ propRef }) {
         </div>
         <div className="mb-5">
           <p className="m-5 font-semibold text-2xl text-center">
-            Episode 8: Sins of the Father
+            Episode 10: Sins of the Father
           </p>
           {/* <iframe
             className="mx-auto"

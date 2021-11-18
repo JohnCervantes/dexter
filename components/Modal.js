@@ -8,6 +8,8 @@ import {
   faThumbsUp,
   faThumbsDown,
   faExclamationTriangle,
+  faChevronLeft,
+  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { RESET_MODAL } from "../cache";
 import Image from "next/image";
@@ -77,7 +79,7 @@ export default function Modal() {
               .toString()
               .substring(0, 15)}
           </p>
-          <div className="relative w-full h-[450px] mt-10">
+          <div className="relative w-full h-[450px] group mt-10">
             <Image
               src={Object.values(JSON.parse(images[selectedImage].URL))[0]}
               objectFit="contain"
@@ -87,6 +89,35 @@ export default function Modal() {
               blurDataURL={images[selectedImage].blurDataURL}
               quality="100"
             />
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                setState({ selectedImage: selectedImage - 1 });
+              }}
+              disabled={selectedImage <= 0}
+            >
+              {" "}
+              <FontAwesomeIcon
+                className={
+                  "transform transition duration-500 ease-in opacity-0 group-hover:opacity-100 absolute top-[50%] w-[50px] h-[25px] hover:text-red-700 z-50"
+                }
+                icon={faChevronLeft}
+                size="lg"
+              />
+            </button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                setState({ selectedImage: selectedImage + 1 });
+              }}
+              disabled={selectedImage >= images.length - 1}
+            >
+              <FontAwesomeIcon
+                className="transform transition duration-500 ease-in opacity-0 group-hover:opacity-100 absolute top-[50%] right-0 w-[50px] h-[25px] hover:text-red-700 z-50"
+                icon={faChevronRight}
+                size="lg"
+              />
+            </button>
           </div>
 
           <div className="flex mt-2">

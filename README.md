@@ -2,7 +2,7 @@
 ## https://dexternewblood.com
 
 ## what is this project about?
-+ A fan-made website for promoting a popular TV show called dexter.
++ A fan-made website that is intended to promote Dexter: New Blood and the original Dexter TV series.
 
 ## Technologies used: 
 

@@ -12,8 +12,8 @@ export default function Footer() {
   return (
     <div className="footer">
       <p className="w-[50%]">
-        This is only a fan-made website that is intented to promote the new
-        season of dexter and the show in general.
+        This is only a fan-made website that is intended to promote Dexter: New
+        Blood and the original Dexter TV series.
       </p>
       {/* <div
         className="border-2 group p-2 hover:border-white mb-3"
@@ -40,14 +40,6 @@ export default function Footer() {
               window.open("https://www.linkedin.com/in/j-cervantes/", "_blank")
             }
             className="w-[50px] h-[40px]  mr-2 cursor-pointer hover:text-red-300"
-            size="2x"
-          />
-          <FontAwesomeIcon
-            icon={faTwitterSquare}
-            onClick={() =>
-              window.open("https://twitter.com/vocalistx", "_blank")
-            }
-            className="w-[50px] h-[40px] mr-2 cursor-pointer hover:text-red-300"
             size="2x"
           />
         </div>

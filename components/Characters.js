@@ -7,7 +7,7 @@ export default function Characters({ propRef }) {
   return (
     <div ref={propRef} className="bg-gray-800 w-[90%] sm:w-[80%] flex mb-5">
       <div className="grid grid-cols-1 divide-y-2 w-full divide-red-700">
-        <div className="overflow-hidden relative bg-[#8a0303] w-full h-[500px] sm:h-[400px] py-3">
+        <div className="overflow-hidden relative hover:bg-[#8a0303] w-full h-[500px] sm:h-[400px] py-3">
           <div className="flex flex-col absolute left-5 z-10 w-[80%]">
             <p className="text-4xl">Dexter Morgan</p>
             <p className="text-lg">Played by Michael C. Hall</p>
@@ -33,7 +33,7 @@ export default function Characters({ propRef }) {
             src="https://www.sho.com/site/image-bin/images/1034991_1_0/1034991_1_0_prm-dexter_1024x640.jpg"
           />
         </div>
-        <div className="relative w-full bg-[#FFFF00] h-[500px] sm:h-[400px] py-3">
+        <div className="relative w-full hover:bg-[#FFFF00] h-[500px] sm:h-[400px] py-3">
           <div className="flex flex-col absolute left-5 z-10 w-[80%]">
             <p className="text-4xl">Debra Morgan</p>
             <p className="text-lg">Played by Jennifer Carpenter</p>
@@ -57,7 +57,7 @@ export default function Characters({ propRef }) {
             src="https://www.sho.com/site/image-bin/images/1034991_1_0/1034991_1_0_prm-deb_1024x640.jpg"
           />
         </div>
-        <div className="relative w-full bg-[#00008b] h-[500px] sm:h-[400px] py-3">
+        <div className="relative w-full hover:bg-[#00008b] h-[500px] sm:h-[400px] py-3">
           <div className="flex flex-col absolute left-5 z-10 w-[80%]">
             <p className="text-4xl">Harrison Morgan</p>
             <p className="text-lg">Played by Jack Alcott</p>
@@ -111,7 +111,7 @@ export default function Characters({ propRef }) {
             src="https://www.sho.com/site/image-bin/images/1034991_1_0/1034991_1_0_prm-angela_1024x640.jpg"
           />
         </div>
-        <div className="relative w-full h-[500px] sm:h-[400px] py-3">
+        <div className="relative w-full hover:bg-[#FFC0CB] h-[500px] sm:h-[400px] py-3">
           <div className="flex flex-col absolute left-5 z-10 w-[80%]">
             <p className="text-4xl">Audrey Bishop</p>
             <p className="text-lg">Played by Johnny Sequoyah</p>
@@ -138,7 +138,7 @@ export default function Characters({ propRef }) {
           />
         </div>
 
-        <div className="relative w-full h-[550px] sm:h-[400px] py-3 bg-green-700">
+        <div className="relative w-full h-[550px] sm:h-[400px] py-3 hover:bg-green-700">
           <div className="flex flex-col absolute left-5 z-10 w-[80%]">
             <p className="text-4xl">Kurt Caldwell</p>
             <p className="text-lg">Played by Clancy Brown</p>
@@ -167,7 +167,7 @@ export default function Characters({ propRef }) {
           />
         </div>
 
-        <div className="relative w-full h-[500px] sm:h-[400px] py-3 bg-[#964B00]">
+        <div className="relative w-full h-[500px] sm:h-[400px] py-3 hover:bg-[#964B00]">
           <div className="flex flex-col absolute left-5 z-10 w-[80%]">
             <p className="text-4xl">Logan</p>
             <p className="text-lg">Played by Alano Miller</p>
