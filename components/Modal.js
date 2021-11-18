@@ -33,7 +33,7 @@ export default function Modal() {
         <p className="form-header">Upload an image</p>
         <div className="border-2 border-red-700 w-[60%] mb-5" />
 
-        <div className="flex w-[90%]">
+        <div className="flex w-[90%] ">
           <div className="flex flex-col w-full items-center justify-center mx-5">
             <Image
               src={
@@ -45,7 +45,7 @@ export default function Modal() {
               width="400px"
               alt="uploaded picture"
             />
-            <label className="mt-3">Select an image...</label>
+            <label className="mt-3 ">Select an image...</label>
             <input
               type="file"
               accept="image/*"
@@ -113,7 +113,9 @@ export default function Modal() {
               />
             </button>
 
-            <p>{JSON.parse(images[selectedImage].likes).length}</p>
+            <p className="mr-2">
+              {JSON.parse(images[selectedImage].likes).length}
+            </p>
             <button
               onClick={(e) => {
                 e.preventDefault();
@@ -138,7 +140,9 @@ export default function Modal() {
                 size="lg"
               />
             </button>
-            <p>{JSON.parse(images[selectedImage].dislikes).length}</p>
+            <p className="mr-2">
+              {JSON.parse(images[selectedImage].dislikes).length}
+            </p>
           </div>
         </div>
       </ModalTemplate>

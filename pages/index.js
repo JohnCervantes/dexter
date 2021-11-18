@@ -1,15 +1,16 @@
-import React, { useRef, useEffect } from "react";
-import Image from "next/image";
+import React from "react";
+
 import Head from "next/head";
 import Episodes from "../components/Episodes";
 import Characters from "../components/Characters";
-import { setState } from "../operations/mutation";
+
+
 
 export default function index({ charactersRefProp, episodesRefProp }) {
   return (
     <div>
       <Head>
-        <title>Dexter</title>
+        <title>Dexter: New Blood - Home page</title>
         <meta
           name="description"
           content="The unofficial website of the popular TV series Dexter by Showtime. Checkout the episodes, character bios, images, and more"

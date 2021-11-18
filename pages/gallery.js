@@ -11,6 +11,7 @@ import { useQuery } from "@apollo/client";
 import connectMongo from "../dbConfig/mongoose";
 import { getStandAloneApolloClient } from "./_app";
 import { getPlaiceholder } from "plaiceholder";
+import Head from "next/head";
 
 export default function gallery(props) {
   useEffect(async () => {
@@ -28,9 +29,7 @@ export default function gallery(props) {
   const [pagination, setPagination] = useState(2);
 
   useEffect(() => {
-    console.log(props.images)
     if (!initialLoad) {
-      console.log(props.images)
       setState({
         images: images.concat(props.images.slice(0, 8)),
         initialLoad: true,
@@ -39,53 +38,65 @@ export default function gallery(props) {
   }, []);
 
   return (
-    <div className="bg-black">
-      <div className="flex justify-center">
-        <p className="text-white text-center text-3xl font-bold p-3">Gallery</p>
-        {ipAddress === process.env.ADMIN ? (
-          <button
-            className="text-white bg-gray-600 rounded p-2"
-            onClick={(e) => {
-              e.preventDefault();
-              setState({ showModal: { show: true, type: "upload" } });
-            }}
-          >
-            Upload an Image
-          </button>
-        ) : undefined}
-      </div>
+    <div>
+      <Head>
+        <title>Dexter: New Blood - Gallery page</title>
+        <meta
+          name="description"
+          content="Gallery page of the unofficial website of the popular TV series Dexter by Showtime."
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div className="bg-black">
+        <div className="flex justify-center items-center">
+          <p className="text-white text-center text-3xl font-bold p-3">
+            Gallery
+          </p>
+          {ipAddress === process.env.ADMIN ? (
+            <button
+              className="text-white bg-red-600 rounded px-3 h-[30px] "
+              onClick={(e) => {
+                e.preventDefault();
+                setState({ showModal: { show: true, type: "upload" } });
+              }}
+            >
+              Upload
+            </button>
+          ) : undefined}
+        </div>
 
-      <InfiniteScroll
-        className="mx-auto items-center w-full flex flex-col p-5 sm:grid sm:grid-cols-4 sm:gap-3 justify-items-center overflow-hidden"
-        dataLength={images.length}
-        next={() => {
-          setTimeout(() => {
-            setState({
-              images: images.concat(
-                props.images.slice(images.length, 8 * pagination - 1)
-              ),
-            });
-            setPagination(pagination + 1);
-          }, 1500);
-        }}
-        hasMore={images.length < props.images.length}
-        loader={
-          <div className="fixed text-white bottom-10 text-2xl font-bold z-20">
-            <div className="flex">
-              <FontAwesomeIcon
-                className="animate-spin h-[30px] w-[20px] mr-1"
-                size="sm"
-                icon={faSpinner}
-              />
-              <p>Loading more images...</p>
+        <InfiniteScroll
+          className="mx-auto items-center w-full flex flex-col p-5 sm:grid sm:grid-cols-4 sm:gap-3 justify-items-center overflow-hidden"
+          dataLength={images.length}
+          next={() => {
+            setTimeout(() => {
+              setState({
+                images: images.concat(
+                  props.images.slice(images.length, 8 * pagination - 1)
+                ),
+              });
+              setPagination(pagination + 1);
+            }, 1500);
+          }}
+          hasMore={images.length < props.images.length}
+          loader={
+            <div className="fixed text-white bottom-10 text-2xl font-bold z-20">
+              <div className="flex">
+                <FontAwesomeIcon
+                  className="animate-spin h-[30px] w-[20px] mr-1"
+                  size="sm"
+                  icon={faSpinner}
+                />
+                <p>Loading more images...</p>
+              </div>
             </div>
-          </div>
-        }
-      >
-        {images.map((i, index) => (
-          <ImageContainer key={i._id} metadata={i} idx={index} />
-        ))}
-      </InfiniteScroll>
+          }
+        >
+          {images.map((i, index) => (
+            <ImageContainer key={i._id} metadata={i} idx={index} />
+          ))}
+        </InfiniteScroll>
+      </div>
     </div>
   );
 }

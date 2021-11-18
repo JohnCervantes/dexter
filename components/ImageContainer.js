@@ -22,7 +22,7 @@ export default function ImageContainer({
           selectedImage: idx,
         });
       }}
-      className="flex-col w-full sm:w-[300px] hover:cursor-pointer z-20 "
+      className="flex-col w-full sm:w-[300px] mb-5 sm:mb-0 hover:cursor-pointer z-20 "
     >
       {/* <p
         className={
@@ -46,6 +46,7 @@ export default function ImageContainer({
         }
       >
         <Image
+          className="hover:animate-img-grow"
           src={Object.values(JSON.parse(URL))[0]}
           layout="fill"
           objectFit="contain"

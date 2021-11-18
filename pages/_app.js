@@ -40,38 +40,36 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ApolloProvider client={client}>
-      <div className="flex text-white z-40 w-full bg-transparent backdrop-blur-sm backdrop-contrast-125 text-2xl p-5 fixed top-0">
+      <div className="flex text-white z-40 w-full bg-transparent backdrop-blur-sm backdrop-contrast-125 text-2xl p-2 fixed top-0">
         {router.pathname === "/" ? (
           <div className="flex">
             <p
-              className="text-gray-200 hover:text-white cursor-pointer"
+              className="hover:text-red-700 cursor-pointer"
               onClick={() =>
                 episodesRef.current.scrollIntoView({
                   behavior: "smooth",
                 })
               }
             >
-              Episodes{" | "}
+              Episodes
             </p>
+            <p>&nbsp;{" | "}&nbsp;</p>
             <p
-              className="text-gray-200 hover:text-white cursor-pointer"
+              className="hover:text-red-700 cursor-pointer"
               onClick={() =>
                 charactersRef.current.scrollIntoView({ behavior: "smooth" })
               }
             >
-              &nbsp;Characters {" | "}
+              Characters
             </p>
+            <p>&nbsp;{" | "}&nbsp;</p>
             <Link href="/gallery">
-              <div className="text-gray-200 hover:text-white cursor-pointer">
-                &nbsp;Gallery{" "}
-              </div>
+              <div className="hover:text-red-700 cursor-pointer">Gallery</div>
             </Link>
           </div>
         ) : (
           <Link href="/">
-            <div className="text-gray-200 hover:text-white cursor-pointer">
-              &nbsp;{"<"} Go back
-            </div>
+            <div className="hover:text-red-700 cursor-pointer">{"<"} Home</div>
           </Link>
         )}
       </div>

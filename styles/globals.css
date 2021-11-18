@@ -138,7 +138,7 @@ body {
 }
 
 .trial-button {
-  @apply border rounded-lg bg-red-700  w-[70%] sm:w-[30%]  p-1;
+  @apply border rounded-lg bg-red-700  w-[80%] sm:w-[30%]  p-1 text-gray-300 hover:text-white;
 }
 
 /* Modal CSS */
@@ -193,7 +193,7 @@ textarea {
 }
 
 label {
-  @apply text-gray-600
+  @apply text-white
   font-bold
   block
   text-left;
