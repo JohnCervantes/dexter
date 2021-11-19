@@ -112,15 +112,3 @@ module.exports = {
   },
   plugins: [],
 };
-
-// /* Zoom Out #1 */
-// .hover03 figure img {
-// 	-webkit-transform: scale(1.5);
-// 	transform: scale(1.5);
-// 	-webkit-transition: .3s ease-in-out;
-// 	transition: .3s ease-in-out;
-// }
-// .hover03 figure:hover img {
-// 	-webkit-transform: scale(1);
-// 	transform: scale(1);
-// }

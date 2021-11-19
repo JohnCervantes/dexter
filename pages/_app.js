@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ApolloProvider client={client}>
-      <div className="flex text-white z-40 w-full bg-transparent backdrop-blur-sm backdrop-contrast-125 text-2xl p-2 fixed top-0">
+      <div className="flex text-white z-40 w-full bg-transparent backdrop-blur-sm backdrop-contrast-150 text-2xl p-2 fixed top-0">
         {router.pathname === "/" ? (
           <div className="flex">
             <p

@@ -27,14 +27,14 @@ export default function Header() {
           />
         </div>
 
-        <div className="text-center w-full absolute top-0 text-white p-5  animate-fade-in">
-          <p className="text-xl mt-[30px]">
+        <div className="text-center w-full absolute top-0 mt-[30px] px-5  text-white pt-7 pb-2  animate-fade-in  ">
+          <p className="text-xl ">
             DEXTER IS BACK! KILLER NEW EPISODES EVERY SUNDAY
           </p>
-          <div className="mx-auto border-2 border-red-700 w-[15%] my-3" />
+          <div className="mx-auto border-2 border-red-700 w-[15%] mt-3" />
         </div>
 
-        <div className=" absolute bottom-3 text-white px-2 animate-fade-in">
+        <div className=" absolute bottom-0 text-white p-2 animate-fade-in backdrop-brightness-75">
           <p className="text-xl sm:text-4xl">DEXTER: NEW BLOOD </p>
           <p>
             Set 10 years after Dexter went missing in the eye of Hurricane
@@ -54,7 +54,7 @@ export default function Header() {
           >
             WATCH THE TRAILER {">"}
           </button>
-          <div className="flex align-middle justify-center mt-3">
+          <div className="flex align-middle justify-center mb-2">
             <button
               onClick={() => {
                 window.open(
@@ -86,15 +86,15 @@ export default function Header() {
           />
         </div>
 
-        <div className="text-center w-full absolute top-0 text-white p-5 animate-fade-in">
-          <p className="text-xl mt-[30px]">
+        <div className="text-center w-full absolute mt-[30px] px-5 top-0 pt-7 pb-2 animate-fade-in text-white">
+          <p className="text-xl ">
             Harrison Morgan is looking for answers on why Dexter walked away
             from him.
           </p>
           <div className="mx-auto border-2 border-red-700 w-[15%] my-3" />
         </div>
 
-        <div className=" absolute bottom-3 text-white px-2 animate-fade-in">
+        <div className=" absolute bottom-0 p-2 animate-fade-in text-white backdrop-brightness-75">
           <p className="text-xl sm:text-4xl">DEXTER: NEW BLOOD </p>
           <p>
             Harrison is on a journey to find out why his father left him. After
@@ -114,7 +114,7 @@ export default function Header() {
           >
             WATCH THE TRAILER {">"}
           </button>
-          <div className="flex align-middle justify-center mt-3">
+          {/* <div className="flex align-middle justify-center mt-3">
             <button
               onClick={() => {
                 window.open(
@@ -126,7 +126,7 @@ export default function Header() {
             >
               START YOUR 30 DAY FREE TRIAL
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     );

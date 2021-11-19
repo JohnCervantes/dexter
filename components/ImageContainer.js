@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ALL_METADATA } from "../operations/query";
 import { setState } from "../operations/mutation";
 import { useLazyQuery } from "@apollo/client";
+import Spinner from "./Spinner";
 
 export default function ImageContainer({
   metadata: { _id, URL, blurDataURL },
@@ -32,6 +33,8 @@ export default function ImageContainer({
     }
   }, [data]);
 
+  if (loading) return <Spinner />;
+
   return (
     <div
       ref={ref}
@@ -59,7 +62,7 @@ export default function ImageContainer({
       <div
         className={
           "flex w-full h-[300px] relative shadow-xl " +
-          (inView ? " animate-fade-in-up" : "")
+          (inView && !called ? " animate-fade-in-up" : "")
         }
       >
         <Image
