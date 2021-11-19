@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import { ALL_METADATA } from "../operations/query";
 import { setState } from "../operations/mutation";
+import { useLazyQuery } from "@apollo/client";
 
 export default function ImageContainer({
-  metadata: { URL, date, blurDataURL },
+  metadata: { _id, URL, blurDataURL },
   idx,
 }) {
   const { ref, inView, entry } = useInView({
@@ -13,14 +15,29 @@ export default function ImageContainer({
     triggerOnce: true,
   });
 
+  const [metadataQuery, { called, loading, data, error }] = useLazyQuery(
+    ALL_METADATA,
+    {
+      fetchPolicy: "network-only",
+      variables: { _id },
+    }
+  );
+
+  useEffect(() => {
+    if (data) {
+      setState({
+        showModal: { show: true, type: "default" },
+        selectedImage: { ...data.image, _id, URL, blurDataURL, idx },
+      });
+    }
+  }, [data]);
+
   return (
     <div
       ref={ref}
-      onClick={() => {
-        setState({
-          showModal: { show: true, type: "default" },
-          selectedImage: idx,
-        });
+      onClick={(e) => {
+        e.preventDefault();
+        metadataQuery();
       }}
       className="flex-col w-full sm:w-[300px] mb-5 sm:mb-0 hover:cursor-pointer z-20 "
     >

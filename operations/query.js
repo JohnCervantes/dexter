@@ -4,14 +4,21 @@ export const ALL_IMAGES = gql`
   query {
     images {
       _id
-      date
       URL
-      likes
-      dislikes
     }
   }
 `;
 
+export const ALL_METADATA = gql`
+  query image($_id: ID!) {
+    image(_id: $_id) {
+      _id
+      likes
+      dislikes
+      date
+    }
+  }
+`;
 
 export function readState(fields) {
   return gql`query {

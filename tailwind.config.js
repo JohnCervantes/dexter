@@ -97,7 +97,7 @@ module.exports = {
       animation: {
         bounce200: "bounce 1s infinite 200ms",
         bounce400: "bounce 1s infinite 400ms",
-        "fade-in": "fade-in 1s ease-out",
+        "fade-in": "fade-in 0.7s ease-out",
         "fade-in-up": "fade-in-up 0.8s ease-out",
         "fade-in-right-to-left": "fade-in-right-to-left 1s ease-out 300ms",
         spin: "spin infinite 5s linear",

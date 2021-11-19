@@ -9,12 +9,7 @@ export const ADD_IMAGE = gql`
     $likes: String
     $dislikes: String
   ) {
-    addImage(
-      date: $date
-      URL: $URL
-      likes: $likes
-      dislikes: $dislikes
-    ) {
+    addImage(date: $date, URL: $URL, likes: $likes, dislikes: $dislikes) {
       _id
       date
       URL
@@ -39,7 +34,6 @@ export const ADD_LIKE = gql`
   }
 `;
 
-
 export const ADD_DISLIKE = gql`
   mutation addDislike($_id: ID!, $dislikes: String!) {
     addDislike(_id: $_id, dislikes: $dislikes) {
@@ -61,18 +55,11 @@ export async function addLike(_id, likes) {
       },
     });
 
-    const updatedImages = [...state().images];
-    let i = 0;
-    for (const item of updatedImages) {
-      if (item._id === addLike._id) {
-        updatedImages[i] = { ...updatedImages[i], likes: addLike.likes };
-        break;
-      }
-      i++;
-    }
+    const image = { ...state().selectedImage };
+    const updatedImage = { ...image, likes: addLike.likes };
 
     setState({
-      images: updatedImages,
+      selectedImage: updatedImage,
       showToast: {
         show: true,
         status: "success",
@@ -106,21 +93,11 @@ export async function addDislike(_id, dislikes) {
       },
     });
 
-    const updatedImages = [...state().images];
-    let i = 0;
-    for (const item of updatedImages) {
-      if (item._id === addDislike._id) {
-        updatedImages[i] = {
-          ...updatedImages[i],
-          dislikes: addDislike.dislikes,
-        };
-        break;
-      }
-      i++;
-    }
+    const image = { ...state().selectedImage };
+    const updatedImage = { ...image, dislikes: addDislike.dislikes };
 
     setState({
-      images: updatedImages,
+      selectedImage: updatedImage,
       showToast: {
         show: true,
         status: "success",

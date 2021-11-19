@@ -21,6 +21,7 @@ const typeDefs = gql`
 
   type Query {
     images: [image]
+    image(_id: ID!): image
   }
 
   type Mutation {

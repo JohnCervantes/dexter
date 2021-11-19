@@ -37,7 +37,8 @@ export const state = makeVar({
   navbarOpen: false,
   showModal: RESET_MODAL,
   images: [],
+  imagesMetadata: [],
   selectedImage: "",
   initialLoad: false,
-  ipAddress: ""
+  fingerPrintID: ""
 });

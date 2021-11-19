@@ -11,6 +11,14 @@ const resolvers = {
         throw new ApolloError(error);
       }
     },
+    image: async (parent, { _id }, context) => {
+      try {
+        const result = await dexterImage.findOne({ _id });
+        return result;
+      } catch (error) {
+        throw new ApolloError(error);
+      }
+    },
   },
   Mutation: {
     addImage: async (parent, { date, URL, likes, dislikes }, context) => {

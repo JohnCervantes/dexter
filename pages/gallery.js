@@ -12,23 +12,23 @@ import connectMongo from "../dbConfig/mongoose";
 import { getStandAloneApolloClient } from "./_app";
 import { getPlaiceholder } from "plaiceholder";
 import Head from "next/head";
+import FingerprintJS from "@fingerprintjs/fingerprintjs";
 
 export default function gallery(props) {
-  useEffect(async () => {
-    const response = await fetch("https://geolocation-db.com/json/");
-    const data = await response.json();
-    setState({ ipAddress: data.IPv4 });
-  }, []);
-
   const {
     data: {
-      readState: { images, initialLoad, ipAddress },
+      readState: { images, fingerPrintID, initialLoad },
     },
-  } = useQuery(readState("images, initialLoad, ipAddress"));
-
+  } = useQuery(readState("images, initialLoad, fingerPrintID"));
   const [pagination, setPagination] = useState(2);
 
-  useEffect(() => {
+  useEffect(async () => {
+    FingerprintJS.load()
+      .then((fp) => fp.get())
+      .then((result) => {
+        setState({ fingerPrintID: result.visitorId });
+      });
+
     if (!initialLoad) {
       setState({
         images: images.concat(props.images.slice(0, 8)),
@@ -52,7 +52,7 @@ export default function gallery(props) {
           <p className="text-white text-center text-3xl font-bold p-3">
             Gallery
           </p>
-          {ipAddress === process.env.ADMIN ? (
+          {fingerPrintID === process.env.ADMIN ? (
             <button
               className="text-white bg-red-600 rounded px-3 h-[30px] "
               onClick={(e) => {
