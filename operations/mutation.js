@@ -34,6 +34,15 @@ export const ADD_LIKE = gql`
   }
 `;
 
+export const ADD_RATING = gql`
+  mutation addRating($_id: ID!, $rating: String!) {
+    addRating(_id: $_id, rating: $rating) {
+      _id
+      rating
+    }
+  }
+`;
+
 export const ADD_DISLIKE = gql`
   mutation addDislike($_id: ID!, $dislikes: String!) {
     addDislike(_id: $_id, dislikes: $dislikes) {
@@ -98,6 +107,52 @@ export async function addDislike(_id, dislikes) {
 
     setState({
       selectedImage: updatedImage,
+      showToast: {
+        show: true,
+        status: "success",
+        header: "Success",
+        message: "New image has been successfully added!",
+      },
+    });
+  } catch (e) {
+    setState({
+      showToast: {
+        showToast: {
+          show: true,
+          status: "error",
+          header: "Failed to add an image",
+          message: e.message,
+        },
+      },
+    });
+  }
+}
+
+export async function addRating(_id, rating) {
+  try {
+    const {
+      data: { addRating },
+    } = await client.mutate({
+      mutation: ADD_RATING,
+      variables: {
+        _id,
+        rating: JSON.stringify(rating),
+      },
+    });
+
+    const episodes = [...state().episodes];
+    let i = 0;
+
+    for (const episode of episodes) {
+      if (episode._id === _id) {
+        episodes[i] = { ...episodes[i], rating: addRating.rating };
+        break;
+      }
+      i++;
+    }
+
+    setState({
+      episodes,
       showToast: {
         show: true,
         status: "success",

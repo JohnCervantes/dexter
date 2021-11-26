@@ -13,7 +13,7 @@ export default function Characters({ propRef }) {
             <p className="text-lg">Played by Michael C. Hall</p>
           </div>
 
-          <div className="flex text-center absolute bottom-5 z-10 px-3">
+          <div className="flex text-center absolute bottom-1 z-10 px-3">
             <p>
               America’s favorite serial killer.  Dexter has relocated to the
               rural town of Iron Lake, NY, living under the alias of “Jim
@@ -39,7 +39,7 @@ export default function Characters({ propRef }) {
             <p className="text-lg">Played by Jennifer Carpenter</p>
           </div>
 
-          <div className="flex text-center absolute bottom-5 z-10 px-3">
+          <div className="flex text-center absolute bottom-1 z-10 px-3">
             <p>
               Dexter’s deceased sister who was a cop in the Miami Metro Police
               Department, and possibly the only person he truly loved.  Deb
@@ -63,7 +63,7 @@ export default function Characters({ propRef }) {
             <p className="text-lg">Played by Jack Alcott</p>
           </div>
 
-          <div className="flex text-center absolute bottom-5 z-10 px-3">
+          <div className="flex text-center absolute bottom-1 z-10 px-3">
             <p>
               Harrison is the son Dexter tried to protect by faking his own
               death and walking away years ago. After too long in the foster
@@ -89,7 +89,7 @@ export default function Characters({ propRef }) {
             <p className="text-lg">Played by Julia Jones</p>
           </div>
 
-          <div className="flex text-center absolute bottom-5 z-10 px-3">
+          <div className="flex text-center absolute bottom-1 z-10 px-3">
             <p>
               Angela Bishop is the first Native-American Chief of Police in Iron
               Lake. And the first female to hold that job as well. She was
@@ -117,7 +117,7 @@ export default function Characters({ propRef }) {
             <p className="text-lg">Played by Johnny Sequoyah</p>
           </div>
 
-          <div className="flex text-center absolute bottom-5 z-10 px-3">
+          <div className="flex text-center absolute bottom-1 z-10 px-3">
             <p>
               Audrey is the brash and opinionated adopted teenage daughter of
               Indigenous single mom Police Chief Angela Bishop. Popular at
@@ -144,7 +144,7 @@ export default function Characters({ propRef }) {
             <p className="text-lg">Played by Clancy Brown</p>
           </div>
 
-          <div className="flex text-center absolute bottom-5 z-10 px-3">
+          <div className="flex text-center absolute bottom-1 z-10 px-3">
             <p>
               Kurt Caldwell was born and raised in the town of Iron Lake. In
               fact, some consider him the unofficial mayor of their small town.
@@ -173,7 +173,7 @@ export default function Characters({ propRef }) {
             <p className="text-lg">Played by Alano Miller</p>
           </div>
 
-          <div className="flex text-center absolute bottom-5 z-10 px-3">
+          <div className="flex text-center absolute bottom-1 z-10 px-3">
             <p>
               Logan is a sergeant in the Iron Lake Police Department and the
               assistant wrestling coach for the local high school. Having

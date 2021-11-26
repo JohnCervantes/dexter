@@ -21,9 +21,11 @@ export default function Modal() {
   const [index, setIndex] = useState(null);
   const {
     data: {
-      readState: { showModal, selectedImage, fingerPrintID, images },
+      readState: { showModal, selectedImage, fingerPrintID, images, hasMore },
     },
-  } = useQuery(readState("showModal, selectedImage, fingerPrintID, images"));
+  } = useQuery(
+    readState("showModal, selectedImage, fingerPrintID, images, hasMore")
+  );
 
   const [metadataQuery, { called, loading, data, error }] = useLazyQuery(
     ALL_METADATA,
@@ -96,7 +98,10 @@ export default function Modal() {
           <p className="text-left w-full ml-5 mt-3">
             {new Date(Number(selectedImage.date)).toString().substring(0, 15)}
           </p>
-          <div className="relative w-full h-[450px] group mt-10">
+          <div
+            key={selectedImage._id}
+            className="relative w-full h-[450px] group mt-10"
+          >
             <Image
               src={Object.values(JSON.parse(selectedImage.URL))[0]}
               objectFit="contain"
@@ -130,6 +135,9 @@ export default function Modal() {
             <button
               onClick={(e) => {
                 e.preventDefault();
+                if (index === images.length - 2) {
+                  setState({ hasMore: true });
+                }
                 metadataQuery({
                   variables: {
                     _id: images[selectedImage.idx + 1]._id,

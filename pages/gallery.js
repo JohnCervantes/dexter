@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,11 +15,12 @@ import Head from "next/head";
 import FingerprintJS from "@fingerprintjs/fingerprintjs";
 
 export default function gallery(props) {
+  const hasMoreRef = useRef(null);
   const {
     data: {
-      readState: { images, fingerPrintID, initialLoad },
+      readState: { images, fingerPrintID, initialLoad, hasMore },
     },
-  } = useQuery(readState("images, initialLoad, fingerPrintID"));
+  } = useQuery(readState("images, initialLoad, fingerPrintID, hasMore"));
   const [pagination, setPagination] = useState(2);
 
   useEffect(async () => {
@@ -36,6 +37,13 @@ export default function gallery(props) {
       });
     }
   }, []);
+
+  useEffect(() => {
+    if (hasMore) {
+      hasMoreRef.current.scrollIntoView();
+      setState({ hasMore: false });
+    }
+  }, [hasMore]);
 
   return (
     <div>
@@ -78,9 +86,10 @@ export default function gallery(props) {
               setPagination(pagination + 1);
             }, 1500);
           }}
+          button
           hasMore={images.length < props.images.length}
           loader={
-            <div className="fixed text-white bottom-10 text-2xl font-bold z-20">
+            <div className="fixed text-white bottom-7  text-2xl font-bold z-50">
               <div className="flex">
                 <FontAwesomeIcon
                   className="animate-spin h-[30px] w-[20px] mr-1"
@@ -97,6 +106,7 @@ export default function gallery(props) {
           ))}
         </InfiniteScroll>
       </div>
+      <div ref={hasMoreRef} />
     </div>
   );
 }

@@ -150,7 +150,7 @@ body {
     w-screen
     backdrop-filter
     backdrop-blur-md
-    z-50;
+    z-30;
 }
 
 .form-body {
@@ -177,7 +177,7 @@ body {
     text-white
     border-gray-700
     animate-fade-in
-    z-50
+    z-40
     shadow-lg;
 }
 

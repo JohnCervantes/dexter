@@ -15,7 +15,6 @@ export const ERROR_TOAST = {
   header: "",
 };
 
-
 export const cache = new InMemoryCache({
   typePolicies: {
     Query: {
@@ -40,5 +39,7 @@ export const state = makeVar({
   imagesMetadata: [],
   selectedImage: "",
   initialLoad: false,
-  fingerPrintID: ""
+  fingerPrintID: "",
+  hasMore: false,
+  episodes: [],
 });
