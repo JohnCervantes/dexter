@@ -41,7 +41,9 @@ export default function gallery(props) {
   useEffect(() => {
     if (hasMore) {
       hasMoreRef.current.scrollIntoView();
-      setState({ hasMore: false });
+      if (images.length === props.images.length) {
+        setState({ hasMore: false });
+      }
     }
   }, [hasMore]);
 
@@ -77,6 +79,7 @@ export default function gallery(props) {
           className="mx-auto items-center w-full flex flex-col p-5 sm:grid sm:grid-cols-4 sm:gap-3 justify-items-center overflow-hidden"
           dataLength={images.length}
           next={() => {
+            setState({ hasMore: true });
             setTimeout(() => {
               setState({
                 images: images.concat(
@@ -84,12 +87,13 @@ export default function gallery(props) {
                 ),
               });
               setPagination(pagination + 1);
+              setState({ hasMore: false });
             }, 1500);
           }}
           button
           hasMore={images.length < props.images.length}
           loader={
-            <div className="fixed text-white bottom-7  text-2xl font-bold z-50">
+            <div className="fixed text-white bottom-3  text-2xl font-bold z-50">
               <div className="flex">
                 <FontAwesomeIcon
                   className="animate-spin h-[30px] w-[20px] mr-1"

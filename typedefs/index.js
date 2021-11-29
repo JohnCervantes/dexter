@@ -39,6 +39,7 @@ const typeDefs = gql`
     images: [image]
     episodes: [episode]
     image(_id: ID!): image
+    rating(_id: ID!): rating
   }
 
   # title: { type: String, required: true },

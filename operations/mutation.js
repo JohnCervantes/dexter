@@ -140,6 +140,8 @@ export async function addRating(_id, rating) {
       },
     });
 
+    return addRating.rating;
+
     const episodes = [...state().episodes];
     let i = 0;
 

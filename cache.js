@@ -41,5 +41,4 @@ export const state = makeVar({
   initialLoad: false,
   fingerPrintID: "",
   hasMore: false,
-  episodes: [],
 });

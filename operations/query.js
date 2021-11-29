@@ -9,7 +9,6 @@ export const ALL_IMAGES = gql`
   }
 `;
 
-
 export const ALL_EPISODES = gql`
   query {
     episodes {
@@ -19,8 +18,15 @@ export const ALL_EPISODES = gql`
       director
       teleplay
       writter
-      rating
       synopsis
+    }
+  }
+`;
+
+export const EPISODE_RATING = gql`
+  query rating($_id: ID!) {
+    rating(_id: $_id) {
+      rating
     }
   }
 `;

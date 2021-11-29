@@ -28,6 +28,14 @@ const resolvers = {
         throw new ApolloError(error);
       }
     },
+    rating: async (parent, { _id }, context) => {
+      try {
+        const result = await dexterEpisode.findOne({ _id });
+        return result;
+      } catch (error) {
+        throw new ApolloError(error);
+      }
+    },
   },
   Mutation: {
     addImage: async (parent, { date, URL, likes, dislikes }, context) => {

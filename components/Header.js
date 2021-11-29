@@ -114,19 +114,6 @@ export default function Header() {
           >
             WATCH THE TRAILER {">"}
           </button>
-          {/* <div className="flex align-middle justify-center mt-3">
-            <button
-              onClick={() => {
-                window.open(
-                  "https://www.sho.com/order?i_cid=int-default-8492",
-                  "_blank"
-                );
-              }}
-              className="trial-button"
-            >
-              START YOUR 30 DAY FREE TRIAL
-            </button>
-          </div> */}
         </div>
       </div>
     );
