@@ -14,6 +14,7 @@ export default function index({
   episodes,
 }) {
   useEffect(async () => {
+    console.log('test');
     FingerprintJS.load()
       .then((fp) => fp.get())
       .then((result) => {
