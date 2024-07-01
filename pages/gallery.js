@@ -62,7 +62,7 @@ export default function gallery(props) {
           <p className="text-white text-center text-3xl font-bold p-3">
             Gallery
           </p>
-          {fingerPrintID === process.env.ADMIN ? (
+          
             <button
               className="text-white bg-red-600 rounded px-3 h-[30px] "
               onClick={(e) => {
@@ -72,7 +72,7 @@ export default function gallery(props) {
             >
               Upload
             </button>
-          ) : undefined}
+          ) 
         </div>
 
         <InfiniteScroll
@@ -115,7 +115,7 @@ export default function gallery(props) {
   );
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   try {
     await connectMongo();
     const client = getStandAloneApolloClient();
@@ -163,7 +163,7 @@ export async function getStaticProps(context) {
     return {
       props: {
         images,
-        revalidate: 500000,
+       // revalidate: 500000,
       },
     };
   } catch (error) {
