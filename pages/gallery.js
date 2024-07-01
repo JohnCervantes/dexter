@@ -144,13 +144,13 @@ export async function getServerSideProps(context) {
         blurDataURL: base64,
       };
 
-      client.mutate({
-        mutation: UPDATE_IMAGE,
-        variables: {
-          _id: images[i]._id,
-          URL: images[i].URL,
-        },
-      });
+      // client.mutate({
+      //   mutation: UPDATE_IMAGE,
+      //   variables: {
+      //     _id: images[i]._id,
+      //     URL: images[i].URL,
+      //   },
+      // });
       i++;
     }
 
