@@ -10,7 +10,7 @@ import { UPDATE_IMAGE } from "../operations/mutation";
 import { useQuery } from "@apollo/client";
 import connectMongo from "../dbConfig/mongoose";
 import { getStandAloneApolloClient } from "./_app";
-import { getPlaiceholder } from "plaiceholder";
+//import { getPlaiceholder } from "plaiceholder";
 import Head from "next/head";
 import FingerprintJS from "@fingerprintjs/fingerprintjs";
 
@@ -62,8 +62,7 @@ export default function gallery(props) {
           <p className="text-white text-center text-3xl font-bold p-3">
             Gallery
           </p>
-          
-            <button
+            {/* <button
               className="text-white bg-red-600 rounded px-3 h-[30px] "
               onClick={(e) => {
                 e.preventDefault();
@@ -71,7 +70,7 @@ export default function gallery(props) {
               }}
             >
               Upload
-            </button>
+            </button> */}
           ) 
         </div>
 
@@ -135,13 +134,13 @@ export async function getServerSideProps(context) {
     for (const image of images) {
       let imageKey = Object.keys(JSON.parse(image.URL))[0];
       const updatedPresignedURL = await getSignedUrl(imageKey);
-      const { base64 } = await getPlaiceholder(updatedPresignedURL);
+      //const { base64 } = await getPlaiceholder(updatedPresignedURL);
       images[i] = {
         ...image,
         URL: JSON.stringify({
           [imageKey]: updatedPresignedURL,
         }),
-        blurDataURL: base64,
+       blurDataURL: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
       };
 
       // client.mutate({

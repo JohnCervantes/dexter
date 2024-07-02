@@ -14,7 +14,6 @@ export default function index({
   episodes,
 }) {
   useEffect(async () => {
-    console.log('test');
     FingerprintJS.load()
       .then((fp) => fp.get())
       .then((result) => {
@@ -66,10 +65,12 @@ export async function getStaticProps(context) {
     if (!data) {
       return { props: { episodes: [], error } };
     }
-
+    const episodes = [...data.episodes];
+    episodes.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
+    
     return {
       props: {
-        episodes: data.episodes,
+        episodes: episodes,
       },
     };
   } catch (error) {
